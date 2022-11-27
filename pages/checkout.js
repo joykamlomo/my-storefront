@@ -1,12 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import CheckoutProduct from '../components/CheckoutProduct';
 import Header from '../components/Header';
+import { useSelector } from 'react-redux';
 import { selectItems } from '../slices/basketSlice';
 
 function checkout() {
   // geet items from store
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const items = useSelector(selectItems);
   return (
     <div>
@@ -32,6 +34,17 @@ function checkout() {
                 ? 'Your Shopping basket is empty'
                 : 'Shopping basket'}
             </h1>
+            {items.map((item, i) => (
+              <CheckoutProduct
+                key={i}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                description={item.description}
+                category={item.category}
+                image={item.image}
+              />
+            ))}
           </div>
         </div>
         {/* right */}
