@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Header from '../components/Header';
+import { selectItems } from '../slices/basketSlice';
 
 function checkout() {
+  // geet items from store
+  const items = useSelector(selectItems);
   return (
     <div>
       <Head>
@@ -23,7 +27,11 @@ function checkout() {
             height={60}
           />
           <div className="flex flex-col p-5 space-y-10 bg-white">
-            <h1 className='text-3xl border-b p-4'>Your Shopping basket </h1>
+            <h1 className="text-3xl border-b p-4">
+              {items.length === 0
+                ? 'Your Shopping basket is empty'
+                : 'Shopping basket'}
+            </h1>
           </div>
         </div>
         {/* right */}
