@@ -11,7 +11,24 @@ export const basketSlice = createSlice({
     addToBasket: (state, action) => {
       state.items = [...state.items, action.payload];
     },
-    removeFromBasket: (state, action) => {},
+    removeFromBasket: (state, action) => {
+      const index = state.items.findIndex(
+        (basketItem) => basketItem.id === action.payload.id
+      );
+      //   make a copy of the basket
+      let newBasket = [...state.items];
+
+      if (index >= 0) {
+        // item exist remove
+        newBasket.splice(index, 1);
+      } else {
+        console.warn(
+          `Cant remove (id: ${action.payload.id}) as it does notexist in the basket`
+        );
+      }
+      state.items = newBasket;
+    },
+    // use filter to remove all items
   },
 });
 

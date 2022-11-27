@@ -5,10 +5,13 @@ import CheckoutProduct from '../components/CheckoutProduct';
 import Header from '../components/Header';
 import { useSelector } from 'react-redux';
 import { selectItems } from '../slices/basketSlice';
+import { useSession } from 'next-auth/react';
 
-function checkout() {
+const Checkout = () => {
+  // check sssion
+  const { data: session } = useSession();
+
   // geet items from store
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const items = useSelector(selectItems);
   return (
     <div>
@@ -48,9 +51,22 @@ function checkout() {
           </div>
         </div>
         {/* right */}
+        <div>
+          {items.length > 0 && (
+            <>
+              <h2 className="whitespace-nowrap">
+                Subtotal ({items.leght} items):
+                <span className="font-bold">{total}</span>
+              </h2>
+              <button>
+                {!session ? 'Sign in to checkout' : 'proceede to checkout'}
+              </button>
+            </>
+          )}
+        </div>
       </main>
     </div>
   );
-}
+};
 
-export default checkout;
+export default Checkout;
