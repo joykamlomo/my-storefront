@@ -21,6 +21,7 @@ function Header() {
         {/* left */}
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
+            onClick={() => router.push('/')}
             src="https://links.papareact.com/f90"
             alt=""
             height={40}
