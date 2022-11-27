@@ -6,9 +6,13 @@ import {
   ShoppingBagIcon,
 } from '@heroicons/react/24/solid';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 function Header() {
   const { data: session } = useSession();
+
+  // routing
+  const router = useRouter();
   // session.user
   return (
     <header>
@@ -54,7 +58,10 @@ function Header() {
             </div>
           )}
 
-          <div className="relative link flex items-center">
+          <div
+            onclick={() => router.push('/checkout')}
+            className="relative link flex items-center"
+          >
             <span className="absolute top-0 right-0 md:right-7 h-5 w-5 bg-yellow-400 text-center text-black font-bold rounded-full">
               0
             </span>
