@@ -31,9 +31,10 @@ const Checkout = () => {
             alt={'alt'}
             width={1020}
             height={60}
+            className="md:w-2/4 md:h-1/2"
           />
           <div className="flex flex-col p-5 space-y-10 bg-white">
-            <h1 className="text-3xl border-b p-4">
+            <h1 className="text-lg border-b p-4">
               {items.length === 0
                 ? 'Your Shopping basket is empty'
                 : 'Shopping basket'}
