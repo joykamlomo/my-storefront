@@ -7,9 +7,16 @@ import {
 } from '@heroicons/react/24/solid';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
+import { selectItems } from '../slices/basketSlice';
 
 function Header() {
+  // using session from nect auth
   const { data: session } = useSession();
+
+  // using globalreduxstore
+  // get items from basket
+  const items = useSelector(selectItems);
 
   // routing
   const router = useRouter();
@@ -64,7 +71,7 @@ function Header() {
             className="relative link flex items-center"
           >
             <span className="absolute top-0 right-0 md:right-7 h-5 w-5 bg-yellow-400 text-center text-black font-bold rounded-full">
-              0
+              {items.length}
             </span>
             <ShoppingBagIcon className="h-10" />
             <p className="hidden  md:inline font-extrabold md:text-sm mt-2">

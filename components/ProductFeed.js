@@ -20,7 +20,7 @@ function ProductFeed({ products }) {
         ))}
       <Image
         className="md:col-span-full"
-        src={'https://links.papareact.com/dyZ'}
+        src={'https://links.papareact.com/ijk'}
         alt={'alt'}
         height={200}
         width={200}

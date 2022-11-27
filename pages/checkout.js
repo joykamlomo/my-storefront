@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
 import Header from '../components/Header';
 
@@ -12,11 +13,20 @@ function checkout() {
       </Head>
 
       <Header />
-      <main className="max-w-screen-2xl mx-auto">
-        {/* <Banner /> */}
-        <h1>i am the checkout</h1>
-
-        {/* <ProductFeed products={products} /> */}
+      <main className="lg:flex max-w-screen-2xl mx-auto">
+        {/* left */}
+        <div className="flex-grow m-5 shadow-sm">
+          <Image
+            src={'https://links.papareact.com/ikj'}
+            alt={'alt'}
+            width={1020}
+            height={60}
+          />
+          <div className="flex flex-col p-5 space-y-10 bg-white">
+            <h1 className='text-3xl border-b p-4'>Your Shopping basket </h1>
+          </div>
+        </div>
+        {/* right */}
       </main>
     </div>
   );
