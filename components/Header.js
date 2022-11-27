@@ -20,9 +20,9 @@ function Header() {
             src="https://links.papareact.com/f90"
             alt=""
             height={40}
-            width={150}
+            width={100}
             onbjectFit="contain"
-            className="cursor-pointer"
+            className="cursor-pointer h-10 w-20"
           />
         </div>
 
