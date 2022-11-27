@@ -1,5 +1,5 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 function Product({ id, title, price, description, category, image }) {
   return (
@@ -7,13 +7,7 @@ function Product({ id, title, price, description, category, image }) {
       <p className="absolute top-2 right-2 text-xs italic text-gray-400">
         {category}
       </p>
-      <Image
-        src={image}
-        alt={title}
-        height={200}
-        width={200}
-        objectFit="contain"
-      />
+      <Image src={image} alt={title} height={200} width={200} />
 
       <h4 className="my-3 text-sm">{title}</h4>
       <p className="mb-5">{price}</p>

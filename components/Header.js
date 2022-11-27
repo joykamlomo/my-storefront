@@ -1,12 +1,15 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 import {
   Bars4Icon,
   MagnifyingGlassIcon,
   ShoppingBagIcon,
-} from "@heroicons/react/24/solid";
+} from '@heroicons/react/24/solid';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 function Header() {
+  const { data: session } = useSession();
+  // session.user
   return (
     <header>
       {/* topnav */}
@@ -34,15 +37,23 @@ function Header() {
 
         {/* right */}
         <div className="text-white flex items-center text-xs space-x-6 mx-6">
-          <div className="link">
-            <p>Hello, Joy Kamlomo</p>
-            <p className="font-extrabold md:text-md">Accounts & Lists</p>
-          </div>
-          {/* 2 */}
-          <div className="link">
-            <p>Returns</p>
-            <p className="font-extrabold md:text-md">& Orders</p>
-          </div>
+          {session ? (
+            <>
+              <div onclick={signOut} className="link cursor-pointer">
+                <p>{`Hey, ${session.user.name}`}</p>
+                <p className="font-extrabold md:text-md">Accounts & Lists</p>
+              </div>
+              <div className="link cursor-pointer">
+                <p>Returns</p>
+                <p className="font-extrabold md:text-md">& Orders</p>
+              </div>
+            </>
+          ) : (
+            <div onClick={signIn}>
+              <p>Sign In</p>
+            </div>
+          )}
+
           <div className="relative link flex items-center">
             <span className="absolute top-0 right-0 md:right-7 h-5 w-5 bg-yellow-400 text-center text-black font-bold rounded-full">
               0

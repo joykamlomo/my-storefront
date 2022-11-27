@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import Product from "./Product";
+import Image from 'next/image';
+import React from 'react';
+import Product from './Product';
 
 function ProductFeed({ products }) {
   return (
@@ -20,8 +20,8 @@ function ProductFeed({ products }) {
         ))}
       <Image
         className="md:col-span-full"
-        src={"https://links.papareact.com/dy2"}
-        alt={"alt"}
+        src={'https://links.papareact.com/dyZ'}
+        alt={'alt'}
         height={200}
         width={200}
       />
