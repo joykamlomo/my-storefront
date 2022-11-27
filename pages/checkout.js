@@ -14,6 +14,9 @@ const Checkout = () => {
   // geet items & total from store
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
+
+  // create a checkout session
+  const createCheckoutSession = () => {};
   return (
     <div>
       <Head>
@@ -31,7 +34,7 @@ const Checkout = () => {
             alt={'alt'}
             width={1020}
             height={60}
-            className="md:w-2/4 md:h-1/2"
+            className="md:w-2/4 md:h-32"
           />
           <div className="flex flex-col p-5 space-y-10 bg-white">
             <h1 className="text-lg border-b p-4">
@@ -61,6 +64,8 @@ const Checkout = () => {
                 <span className="font-bold">{total}</span>
               </h2>
               <button
+                // role={link}
+                onClick={createCheckoutSession}
                 disabled={!session}
                 className={`button mt-2 ${
                   !session &&
