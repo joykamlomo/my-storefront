@@ -9,7 +9,7 @@ function SignupScreen() {
           <span>
             <ShoppingBagIcon className="w-10 h-10 text-emerald-700" />{' '}
           </span>
-          <h2 className="text-black text-4xl font-sans tracking-wide leading-9 mt-8">
+          <h2 className="text-black text-5xl md:text-4xl font-sans tracking-wide mt-8">
             Now lets make you a Member.
           </h2>
         </div>
