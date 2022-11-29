@@ -4,7 +4,7 @@ import { ShoppingBagIcon } from '@heroicons/react/24/solid';
 function SignupScreen() {
   return (
     <div className="flex h-screen">
-      <div className="max-w-md mx-auto flex flex-col space-y-8 py-8 px-4">
+      <div className="max-w-md mx-auto flex flex-col space-y-8 py-8 sm:px-8">
         <div className="w-full flex-0">
           <span>
             <ShoppingBagIcon className="w-10 h-10 text-emerald-700" />{' '}
