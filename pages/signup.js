@@ -31,7 +31,7 @@ function SignupScreen() {
               placeholder="********"
             />
             <span className="text-gray-400 text-xs">
-              <p className="py-2 px-1">
+              <p className="px-1">
                 X Minimum of 8 characters <br /> X Uppercase, lowercase letters,
                 symbols and numbers
               </p>
@@ -42,7 +42,7 @@ function SignupScreen() {
               placeholder="Enter password again"
             />
 
-            <button className="bg-black text-white py-4 px-6 mt-5 sm:w-full md:w-96 rounded-full">
+            <button className="bg-black text-white py-4 px-6 mt-5 w-96 rounded-full">
               Create Account
             </button>
           </form>
