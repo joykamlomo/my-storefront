@@ -20,7 +20,7 @@ const Shipping = () => {
   } = useForm();
 
   // geet items & total from store
-  const shipping = useSelector(selectShipping);
+  // const shipping = useSelector(selectShipping);
 
   const submitHandler = ({ fullName, address, city, postalCode, country }) => {
     dispatch(addShipping({ fullName, address, city, postalCode, country }));
