@@ -9,40 +9,40 @@ function SignupScreen() {
           <span>
             <ShoppingBagIcon className="w-10 h-10 text-emerald-700" />{' '}
           </span>
-          <h2 className="text-black text-4xl font-sans tracking-wide leading-9r mt-10">
+          <h2 className="text-black text-4xl font-sans tracking-wide leading-9 mt-8">
             Now lets make you a Member.
           </h2>
         </div>
         <div className="flex-grow min-h-0">
-          <form className="w-full flex flex-col items-center space-y-5">
+          <form className="w-96 flex flex-col items-center space-y-5">
             <input
               type="text"
-              className="w-full py-3 px-4 border border-black rounded-xl"
+              className="w-96 py-3 px-4 border border-black rounded-xl"
               placeholder="John Doe"
             />
             <input
               type="email"
-              className="w-full py-3 px-4 border border-black rounded-xl"
+              className="w-96 py-3 px-4 border border-black rounded-xl"
               placeholder="example@email.com"
             />
             <input
               type="password"
-              className="w-full py-3 px-4 border border-black rounded-xl"
+              className="w-96 py-3 px-4 border border-black rounded-xl"
               placeholder="********"
             />
-            <span className="text-gray-400 text-xs">
-              <p className="px-1">
-                X Minimum of 8 characters <br /> X Uppercase, lowercase letters,
-                symbols and numbers
-              </p>
-            </span>
+            <p className="text-gray-400 text-xs mt-2">
+              X Minimum of 8 characters
+            </p>
+            <p className="text-gray-400 text-xs">
+              X Uppercase, lowercase letters, symbols and numbers
+            </p>
             <input
               type="password"
-              className="w-full py-3 px-4 border border-black rounded-xl"
+              className="w-96 py-3 px-4 border border-black rounded-xl"
               placeholder="Enter password again"
             />
 
-            <button className="bg-black text-white py-4 px-6 mt-5 w-96 rounded-full">
+            <button className="bg-black text-white py-4 px-6 mt-7 w-96 rounded-full">
               Create Account
             </button>
           </form>
