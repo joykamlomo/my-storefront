@@ -36,7 +36,7 @@ function SignupScreen() {
               className="w-96 py-3 px-4 border border-black rounded-xl"
               placeholder="Enter password again"
             />
-            <ul className="text-gray-400 text-xs -mt-6">
+            <ul className="text-gray-400 text-xs px-1 -py-4">
               <li>X Minimum of 8 characters</li>
               <li>X Uppercase, lowercase letters, symbols and numbers</li>
             </ul>
