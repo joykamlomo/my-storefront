@@ -28,7 +28,6 @@ export const basketSlice = createSlice({
       }
       state.items = newBasket;
     },
-    // use filter to remove all items
   },
 });
 

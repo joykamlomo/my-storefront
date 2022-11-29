@@ -6,8 +6,10 @@ import Header from '../components/Header';
 import { useSelector } from 'react-redux';
 import { selectItems, selectTotal } from '../slices/basketSlice';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 const Checkout = () => {
+  const router = useRouter();
   // check sssion
   const { data: session } = useSession();
 
@@ -16,7 +18,9 @@ const Checkout = () => {
   const total = useSelector(selectTotal);
 
   // create a checkout session
-  const createCheckoutSession = () => {};
+  const createCheckoutSession = () => {
+    router.push('/shipping');
+  };
   return (
     <div>
       <Head>
