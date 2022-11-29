@@ -16,6 +16,11 @@ function SignupScreen() {
         <div className="flex-grow min-h-0">
           <form className="w-96 flex flex-col space-y-5">
             <input
+              type="text"
+              className="w-96 py-3 px-4 border border-black rounded-xl"
+              placeholder="John Doe"
+            />
+            <input
               type="email"
               className="w-96 py-3 px-4 border border-black rounded-xl"
               placeholder="example@email.com"
@@ -25,13 +30,19 @@ function SignupScreen() {
               className="w-96 py-3 px-4 border border-black rounded-xl"
               placeholder="********"
             />
+
+            <input
+              type="password"
+              className="w-96 py-3 px-4 border border-black rounded-xl"
+              placeholder="Enter password again"
+            />
             <ul className="text-gray-400 text-xs px-1 -py-4">
               <li>X Minimum of 8 characters</li>
               <li>X Uppercase, lowercase letters, symbols and numbers</li>
             </ul>
 
             <button className="bg-black text-white py-4 px-6 mt-7 w-96 rounded-full outline-none right-0">
-              Sign In
+              Create Account
             </button>
           </form>
         </div>
