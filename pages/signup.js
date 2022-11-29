@@ -41,7 +41,7 @@ function SignupScreen() {
               <li>X Uppercase, lowercase letters, symbols and numbers</li>
             </ul>
 
-            <button className="bg-black text-white py-4 px-6 mt-7 w-96 rounded-full">
+            <button className="bg-black text-white py-4 px-6 mt-7 w-96 rounded-full outline-none right-0">
               Create Account
             </button>
           </form>
