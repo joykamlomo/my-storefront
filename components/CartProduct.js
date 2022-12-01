@@ -18,11 +18,11 @@ function CartProduct({ id, title, price, description, category, image }) {
   };
   return (
     <div class="flex flex-row space-x-4">
-      <div class="bg-stone-100 w-56 h-36 p-2 flex justify-center items-centers rounded-3xl">
+      <div class="bg-white w-32 h-28 p-2 flex justify-center items-centers rounded-3xl">
         <Image src={image} alt={''} height={1000} width={1000} />
       </div>
 
-      <div class="flex flex-col py-4 w-full">
+      <div class="flex flex-col py-2 w-full">
         <div>
           <h2 class="text-gray-900 tracking-wider py-1">{title}</h2>
         </div>
