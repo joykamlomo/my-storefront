@@ -67,7 +67,7 @@ function Header() {
           )}
 
           <div
-            onClick={() => router.push('/checkout')}
+            onClick={() => router.push('/cart')}
             className="relative link flex items-center"
           >
             <span className="absolute top-0 right-0 md:right-7 h-5 w-5 bg-yellow-400 text-center text-black font-bold rounded-full">

@@ -1,15 +1,18 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import CheckoutWizard from '../components/CheckoutWizard';
 import Header from '../components/Header';
-import { addShipping, selectShipping } from '../slices/basketSlice';
+import { addToShipping, selectShipping } from '../slices/shippingSlice';
 
 const Shipping = () => {
   const dispatch = useDispatch();
   const router = useRouter();
+
+  // select shippping data
+  const shipping = useSelector(selectShipping);
 
   // form
   const {
@@ -22,10 +25,19 @@ const Shipping = () => {
   // geet items & total from store
   // const shipping = useSelector(selectShipping);
 
-  const submitHandler = ({ fullName, address, city, postalCode, country }) => {
-    dispatch(addShipping({ fullName, address, city, postalCode, country }));
+  const submitHandler = ({ name, address, city, postalcode, country }) => {
+    dispatch(addToShipping({ name, address, city, postalcode, country }));
     router.push('/payment');
   };
+
+  useEffect(() => {
+    setValue('name', shipping.name);
+    setValue('address', shipping.address);
+    setValue('city', shipping.city);
+    setValue('postalcode', shipping.postalcode);
+    setValue('country', shipping.country);
+  }, [setValue, shipping]);
+
   return (
     <div>
       <Head>
@@ -34,7 +46,7 @@ const Shipping = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      {/* <Header /> */}
       <main className="lg:flex flex-col max-w-screen-sm py-5 mx-auto">
         <CheckoutWizard activeStep={1} />
 
@@ -49,8 +61,8 @@ const Shipping = () => {
                   required: 'Please enter full name',
                 })}
               />
-              {errors.fullName && (
-                <div className="text-red-500">{errors.fullName.message}</div>
+              {errors.name && (
+                <div className="text-red-500">{errors.name.message}</div>
               )}
             </div>
             <div className="mb-4">
@@ -62,8 +74,8 @@ const Shipping = () => {
                   required: 'Please enter full name',
                 })}
               />
-              {errors.fullName && (
-                <div className="text-red-500">{errors.fullName.message}</div>
+              {errors.address && (
+                <div className="text-red-500">{errors.address.message}</div>
               )}
             </div>
             <div className="mb-4">
@@ -75,8 +87,8 @@ const Shipping = () => {
                   required: 'Please enter full name',
                 })}
               />
-              {errors.fullName && (
-                <div className="text-red-500">{errors.fullName.message}</div>
+              {errors.city && (
+                <div className="text-red-500">{errors.city.message}</div>
               )}
             </div>
             <div className="mb-4">
@@ -88,8 +100,8 @@ const Shipping = () => {
                   required: 'Please enter full name',
                 })}
               />
-              {errors.fullName && (
-                <div className="text-red-500">{errors.fullName.message}</div>
+              {errors.postalcode && (
+                <div className="text-red-500">{errors.postalcode.message}</div>
               )}
             </div>
             <div className="mb-4">
@@ -101,8 +113,8 @@ const Shipping = () => {
                   required: 'Please enter full name',
                 })}
               />
-              {errors.fullName && (
-                <div className="text-red-500">{errors.fullName.message}</div>
+              {errors.country && (
+                <div className="text-red-500">{errors.country.message}</div>
               )}
             </div>
             <div>

@@ -12,6 +12,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import persistStore from 'redux-persist/lib/persistStore';
+import shippingSlice from '../slices/shippingSlice';
 
 //store.js
 const persistConfig = {
@@ -21,7 +22,10 @@ const persistConfig = {
 
 // const basketRed
 //store.js
-const reducers = combineReducers({ basket: basketSlice });
+const reducers = combineReducers({
+  basket: basketSlice,
+  shippingdetails: shippingSlice,
+});
 
 ///store.js
 const persistedReducer = persistReducer(persistConfig, reducers);

@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { persistor, store } from '../app/store';
+import { persistor, store } from '../apps/store';
 import { Provider } from 'react-redux';
 import { SessionProvider } from 'next-auth/react';
 //index.js
