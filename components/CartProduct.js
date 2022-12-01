@@ -18,7 +18,7 @@ function CartProduct({ id, title, price, description, category, image }) {
   };
   return (
     <div class="flex flex-row space-x-4">
-      <div class="bg-white w-32 h-28 p-2 flex justify-center items-centers rounded-3xl">
+      <div class="bg-white w-40 h-28 p-2 flex justify-center items-centers rounded-3xl">
         <Image src={image} alt={''} height={1000} width={1000} />
       </div>
 
